@@ -27,13 +27,18 @@ function handleQuoteSubmit(e){
   const form = e.target;
   const btn = form.querySelector('.form-submit');
   const errorBox = document.getElementById('formError');
-  const original = btn.textContent;
+  const original = btn.dataset.label || btn.textContent;
+  btn.dataset.label = original;
 
   const formData = new FormData(form);
   const payload = {};
   formData.forEach((value, key) => { payload[key] = value; });
 
+  // Netlify matches submissions to the form by this field; without it the POST is rejected.
+  payload['form-name'] = form.getAttribute('name');
+
   btn.textContent = 'Sending…';
+  btn.disabled = true;
   if(errorBox) errorBox.style.display = 'none';
 
   fetch('/', {
@@ -41,17 +46,22 @@ function handleQuoteSubmit(e){
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: encodeForm(payload)
   })
-    .then(() => {
+    .then((response) => {
+      // A non-2xx here means Netlify did not record the request — never show success for it.
+      if(!response.ok) throw new Error('Form POST failed with status ' + response.status);
       btn.textContent = 'Request received ✓';
       btn.style.background = '#7fae6f';
+      btn.disabled = false;
       setTimeout(() => {
         btn.textContent = original;
         btn.style.background = '';
         form.reset();
       }, 2600);
     })
-    .catch(() => {
+    .catch((err) => {
+      console.error('Quote request was not delivered:', err);
       btn.textContent = original;
+      btn.disabled = false;
       if(errorBox) errorBox.style.display = 'block';
     });
 
