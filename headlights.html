@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Headlight Restoration — ClearBeam AutoCare, Katy TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><span class="badge">●</span> Mobile service across Katy &amp; West Houston — we come to your driveway</span>
+    <span class="mono">Call/Text <strong style="color:var(--amber)">(206) 403-3356</strong></span>
+  </div>
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="48" height="48" rx="8" fill="#FFB130"/>
+        <path d="M10 30 L15 18 H33 L38 30" stroke="#1B1D1F" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+        <circle cx="16" cy="30" r="3.2" fill="#1B1D1F"/>
+        <circle cx="32" cy="30" r="3.2" fill="#1B1D1F"/>
+        <path d="M15 18 L18 12 H30 L33 18" stroke="#1B1D1F" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">
+        <div class="b1">ClearBeam AutoCare</div>
+        <div class="b2">Mobile Mechanic · Headlights</div>
+      </span>
+    </a>
+    <div class="navlinks">
+      <a class="nl" href="services.html">Services</a>
+      <a class="nl active" href="headlights.html">Headlights</a>
+      <a class="nl" href="how-it-works.html">How It Works</a>
+      <a class="nl" href="service-area.html">Service Area</a>
+      <a href="quote.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div class="page-header">
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">Home</a> / Headlight Restoration</div>
+      <div class="sec-eyebrow">The specialty</div>
+      <h1>Cloudy headlights aren't just ugly — they're a visibility problem</h1>
+      <p>Houston sun oxidizes the polycarbonate coating on most headlights within 3–5 years, cutting nighttime light output by up to 80%. We restore it, curbside, in under an hour.</p>
+    </div>
+  </div>
+
+  <!-- ============ INTERACTIVE COMPARE ============ -->
+  <section style="background:var(--asphalt);padding-top:0;padding-bottom:56px;">
+    <div class="wrap" style="max-width:640px;">
+      <div class="slider-card">
+        <div class="slider-label-row">
+          <span class="t">Drag to Compare</span>
+          <span class="t2">oxidized vs. restored</span>
+        </div>
+        <div class="beam-wrap" id="beamWrap">
+          <div class="beam-layer beam-after">
+            <svg viewBox="0 0 400 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <radialGradient id="glowA" cx="38%" cy="45%" r="65%">
+                  <stop offset="0%" stop-color="#fff6da"/>
+                  <stop offset="35%" stop-color="#ffd873"/>
+                  <stop offset="100%" stop-color="#3a2f12"/>
+                </radialGradient>
+                <linearGradient id="beamA" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#fff6da" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#fff6da" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="300" fill="#0e0f10"/>
+              <polygon points="120,150 400,60 400,240" fill="url(#beamA)" opacity="0.55"/>
+              <ellipse cx="150" cy="150" rx="110" ry="95" fill="url(#glowA)"/>
+              <ellipse cx="150" cy="150" rx="108" ry="93" fill="none" stroke="#ffe7a8" stroke-width="3" opacity="0.8"/>
+              <g stroke="#fff6da" stroke-width="2" opacity="0.5">
+                <line x1="90" y1="100" x2="70" y2="80"/>
+                <line x1="150" y1="80" x2="150" y2="52"/>
+                <line x1="210" y1="100" x2="230" y2="80"/>
+              </g>
+            </svg>
+          </div>
+          <div class="beam-before" id="beamBefore">
+            <svg viewBox="0 0 400 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <radialGradient id="glowB" cx="38%" cy="45%" r="65%">
+                  <stop offset="0%" stop-color="#8a7a55"/>
+                  <stop offset="60%" stop-color="#59503c"/>
+                  <stop offset="100%" stop-color="#2a2823"/>
+                </radialGradient>
+                <filter id="haze"><feTurbulence baseFrequency="0.9" numOctaves="2" result="n"/><feColorMatrix in="n" type="saturate" values="0"/></filter>
+              </defs>
+              <rect width="400" height="300" fill="#1c1c1a"/>
+              <ellipse cx="150" cy="150" rx="110" ry="95" fill="url(#glowB)"/>
+              <ellipse cx="150" cy="150" rx="110" ry="95" fill="#cfcabb" opacity="0.12" filter="url(#haze)"/>
+              <ellipse cx="150" cy="150" rx="108" ry="93" fill="none" stroke="#7a7260" stroke-width="3" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="drag-line" id="dragLine" style="left:50%;"></div>
+          <div class="drag-handle" id="dragHandle" style="left:50%;">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 6L3 12L8 18M16 6L21 12L16 18" stroke="#1B1D1F" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="tag left">Oxidized</span>
+          <span class="tag right">Restored</span>
+          <input type="range" min="0" max="100" value="50" class="beam-input" id="beamRange" aria-label="Drag to compare oxidized and restored headlight">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HEADLIGHT DEEP DIVE ============ -->
+  <section class="headlight-sec">
+    <div class="wrap">
+      <div class="hl-grid">
+        <div>
+          <div class="why-cloudy">
+            <h4>Why not just buy a $12 kit?</h4>
+            <p>Store kits skip the UV-blocking topcoat. Lenses look clear for a few weeks, then yellow faster than before because the sanded surface is now unprotected. We seal every restoration with a catalyzed clear coat rated for outdoor UV exposure.</p>
+          </div>
+
+          <div class="hl-price">
+            <div class="row"><span>Two-headlight restoration</span><span class="p">$79</span></div>
+            <div class="row"><span>Add UV ceramic topcoat (recommended)</span><span class="p">+$25</span></div>
+            <div class="row"><span>Heavy oxidation / pitted lens</span><span class="p">+$15–30</span></div>
+            <div class="fine">Flat mobile rate in Katy, Cinco Ranch, Fulshear &amp; Cross Creek Ranch. Most jobs done in 45–60 minutes while you're inside working. Satisfaction guaranteed for 12 months against re-yellowing.</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="color:var(--paper);font-size:16px;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:6px;">The process</h3>
+          <ol class="hl-steps">
+            <li><div><h4>Inspect &amp; Tape Off</h4><p>We check for cracks or moisture inside the housing, then mask the surrounding paint and trim.</p></div></li>
+            <li><div><h4>Wet-Sand in Stages</h4><p>400 to 3000-grit, working the oxidized layer off without going near the paint edge.</p></div></li>
+            <li><div><h4>Machine Polish</h4><p>A compound buff brings back full optical clarity — not just a surface shine.</p></div></li>
+            <li><div><h4>UV Seal &amp; Cure</h4><p>A catalyzed clear coat goes on last, curing on-site so you're driving with it same day.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PHOTO ============ -->
+  <section class="photo-band" style="padding-top:84px;">
+    <div class="wrap">
+      <div class="photo-grid">
+        <figure class="photo-card">
+          <img src="https://images.unsplash.com/photo-1779263724565-7834ba0ec8a2?auto=format&fit=crop&w=1200&q=80" alt="Side-by-side comparison of a restored clear headlight next to an oxidized, yellowed headlight on the same car" loading="lazy">
+          <figcaption><span class="tag-line">Real results</span>One clear, one not — restoration in progress</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA STRIP ============ -->
+  <section style="background:var(--paper-dim);padding:56px 0;">
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+      <div>
+        <h2 style="font-size:24px;color:var(--asphalt);">Ready to clear them up?</h2>
+        <p style="color:#54524a;margin-top:6px;">Most jobs done in 45–60 minutes, curbside.</p>
+      </div>
+      <a href="quote.html" class="btn btn-primary" style="border:1px solid var(--asphalt);">Get a Quote →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="48" height="48" rx="8" fill="#FFB130"/>
+          <path d="M10 30 L15 18 H33 L38 30" stroke="#1B1D1F" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+          <circle cx="16" cy="30" r="3.2" fill="#1B1D1F"/>
+          <circle cx="32" cy="30" r="3.2" fill="#1B1D1F"/>
+        </svg>
+        <span class="b1">ClearBeam AutoCare</span>
+      </div>
+      <div class="foot-links">
+        <a href="services.html">Services</a>
+        <a href="headlights.html">Headlight Restoration</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="service-area.html">Service Area</a>
+        <a href="quote.html">Get a Quote</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ClearBeam AutoCare · Mobile Mechanic &amp; Headlight Restoration · Katy, TX</span>
+      <span>khaled@clearbeamandautocare.com · Licensed &amp; insured mobile technician</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

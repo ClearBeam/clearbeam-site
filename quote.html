@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get a Quote — ClearBeam AutoCare, Katy TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><span class="badge">●</span> Mobile service across Katy &amp; West Houston — we come to your driveway</span>
+    <span class="mono">Call/Text <strong style="color:var(--amber)">(206) 403-3356</strong></span>
+  </div>
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="48" height="48" rx="8" fill="#FFB130"/>
+        <path d="M10 30 L15 18 H33 L38 30" stroke="#1B1D1F" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+        <circle cx="16" cy="30" r="3.2" fill="#1B1D1F"/>
+        <circle cx="32" cy="30" r="3.2" fill="#1B1D1F"/>
+        <path d="M15 18 L18 12 H30 L33 18" stroke="#1B1D1F" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">
+        <div class="b1">ClearBeam AutoCare</div>
+        <div class="b2">Mobile Mechanic · Headlights</div>
+      </span>
+    </a>
+    <div class="navlinks">
+      <a class="nl" href="services.html">Services</a>
+      <a class="nl" href="headlights.html">Headlights</a>
+      <a class="nl" href="how-it-works.html">How It Works</a>
+      <a class="nl" href="service-area.html">Service Area</a>
+      <a href="quote.html" class="nav-cta">Get a Quote</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ CTA / CONTACT ============ -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="crumb" style="color:var(--chrome);"><a href="index.html" style="color:var(--chrome);">Home</a> / Get a Quote</div>
+      <div class="cta-grid">
+        <div>
+          <div class="sec-eyebrow" style="color:var(--amber);">Get a quote</div>
+          <h2>Tell us what's wrong.<br>We'll tell you what it costs.</h2>
+          <p class="lead">Most quotes over the phone in under 5 minutes. No obligation, no pressure — just a straight number.</p>
+
+          <div class="phone-cta">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.1c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="#FFB130"/></svg>
+            <a href="tel:+12064033356" class="num">(206) 403-3356</a>
+          </div>
+
+          <div class="email-cta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z" stroke="#9AA5AC" stroke-width="1.6"/><path d="M3.5 7l8.5 6 8.5-6" stroke="#9AA5AC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="mailto:khaled@clearbeamandautocare.com" class="email-link">khaled@clearbeamandautocare.com</a>
+          </div>
+
+          <div class="hours-list">
+            <div><span>Mon – Fri</span><span>7:00 AM – 7:00 PM</span></div>
+            <div><span>Saturday</span><span>8:00 AM – 5:00 PM</span></div>
+            <div><span>Sunday</span><span>Emergency calls only</span></div>
+          </div>
+        </div>
+
+        <form class="quote-form" name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleQuoteSubmit(event)">
+          <input type="hidden" name="form-name" value="quote-request">
+          <p class="hp-field"><label>Leave this field blank: <input name="bot-field"></label></p>
+
+          <h3>Request a quote</h3>
+          <div class="sub">We'll text you back — usually within the hour.</div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="qname">Name</label>
+              <input id="qname" name="name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="qphone">Phone</label>
+              <input id="qphone" name="phone" type="tel" placeholder="(555) 123-4567" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="qzip">ZIP code</label>
+            <input id="qzip" name="zip" type="text" placeholder="77450" inputmode="numeric" required>
+          </div>
+
+          <div class="field">
+            <label for="qservice">What do you need?</label>
+            <select id="qservice" name="service">
+              <option>Headlight restoration</option>
+              <option>Battery / won't start</option>
+              <option>Brakes</option>
+              <option>Check engine light / diagnostics</option>
+              <option>Oil change / fluids</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="qnotes">Vehicle &amp; notes</label>
+            <textarea id="qnotes" name="notes" placeholder="Year, make, model, and what's going on"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">Send Request →</button>
+          <div class="form-note">By submitting, you agree to be contacted by text or phone about your request.</div>
+          <div class="form-error" id="formError" style="display:none;">Something went wrong — please call or text us instead at <a href="tel:+12064033356" style="color:var(--amber);">(206) 403-3356</a>.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="48" height="48" rx="8" fill="#FFB130"/>
+          <path d="M10 30 L15 18 H33 L38 30" stroke="#1B1D1F" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+          <circle cx="16" cy="30" r="3.2" fill="#1B1D1F"/>
+          <circle cx="32" cy="30" r="3.2" fill="#1B1D1F"/>
+        </svg>
+        <span class="b1">ClearBeam AutoCare</span>
+      </div>
+      <div class="foot-links">
+        <a href="services.html">Services</a>
+        <a href="headlights.html">Headlight Restoration</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="service-area.html">Service Area</a>
+        <a href="quote.html">Get a Quote</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ClearBeam AutoCare · Mobile Mechanic &amp; Headlight Restoration · Katy, TX</span>
+      <span>khaled@clearbeamandautocare.com · Licensed &amp; insured mobile technician</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
