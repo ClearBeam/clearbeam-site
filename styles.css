@@ -1,7 +1,7 @@
 :root{
-  --asphalt:#1B1D1F;
-  --asphalt-2:#26292c;
-  --steel:#3F4A56;
+  --asphalt:#17222B;
+  --asphalt-2:#21303B;
+  --steel:#3C5060;
   --paper:#FFFFFF;
   --paper-dim:#F3F3F1;
   --amber:#FFB130;
@@ -368,11 +368,11 @@ form.quote-form .sub{font-size:12.5px;color:var(--chrome);margin-bottom:20px;}
   color:var(--paper);border-radius:4px;padding:11px 12px;font-family:'Inter',sans-serif;font-size:14px;
 }
 .field textarea{resize:vertical;min-height:70px;}
-.field input::placeholder, .field textarea::placeholder{color:#6a7178;}
+.field input::placeholder, .field textarea::placeholder{color:#7E8990;}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 @media (max-width:480px){.row2{grid-template-columns:1fr;}}
 .form-submit{width:100%;justify-content:center;margin-top:6px;border:none;}
-.form-note{font-size:11.5px;color:#6a7178;margin-top:12px;}
+.form-note{font-size:11.5px;color:#98A2AA;margin-top:12px;}
 .hp-field{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
 .form-error{
   display:none;margin-top:14px;padding:12px 14px;border-radius:4px;
@@ -381,7 +381,7 @@ form.quote-form .sub{font-size:12.5px;color:var(--chrome);margin-bottom:20px;}
 }
 
 /* ===== Footer ===== */
-footer{background:#141516;color:var(--chrome);padding:44px 0 26px;}
+footer{background:#121A21;color:var(--chrome);padding:44px 0 26px;}
 .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;padding-bottom:28px;border-bottom:1px solid rgba(237,234,226,0.08);}
 .foot-brand{display:flex;align-items:center;gap:10px;}
 .foot-brand .brand-mark{width:28px;height:28px;}
@@ -391,7 +391,7 @@ footer{background:#141516;color:var(--chrome);padding:44px 0 26px;}
 .foot-links a:hover{color:var(--amber);}
 .foot-bottom{
   display:flex;justify-content:space-between;padding-top:20px;font-size:12px;flex-wrap:wrap;gap:8px;
-  font-family:'IBM Plex Mono',monospace;color:#5f666c;
+  font-family:'IBM Plex Mono',monospace;color:#7C868D;
 }
 
 ::selection{background:var(--amber);color:var(--asphalt);}
