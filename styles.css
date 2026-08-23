@@ -242,6 +242,22 @@ section{padding:84px 0;}
 }
 .photo-card img{width:100%;height:100%;object-fit:cover;display:block;}
 .photo-card svg.diagram{width:100%;height:100%;display:block;background:var(--asphalt);}
+.photo-grid.single{grid-template-columns:1fr;}
+.photo-card.wide{aspect-ratio:1024/382;max-width:1024px;margin:0 auto;}
+.photo-card .tag.top{top:12px;bottom:auto;}
+.photo-credit{
+  max-width:1024px;margin:12px auto 0;
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.5;
+  color:#6f6d66;
+}
+.photo-credit a{color:#6f6d66;}
+@media (max-width:640px){
+  /* the wide before/after frame is too short for an overlaid caption on phones */
+  .photo-card.wide{aspect-ratio:auto;}
+  .photo-card.wide img{height:auto;}
+  .photo-card.wide figcaption{position:static;background:var(--asphalt);padding:13px 15px 15px;font-size:14px;}
+  .photo-card.wide .tag{font-size:9.5px;padding:4px 7px;}
+}
 .photo-card figcaption{
   position:absolute;left:0;right:0;bottom:0;
   background:linear-gradient(to top, rgba(0,0,0,0.75), transparent);
