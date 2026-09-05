@@ -1,0 +1,8 @@
+# Static site published from the repository root; the appointment API lives in
+# Netlify Functions and database migrations are applied from
+# netlify/database/migrations at deploy time.
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"

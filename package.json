@@ -1,0 +1,15 @@
+{
+  "name": "clearbeam-autocare",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ClearBeam AutoCare — mobile mechanic & headlight restoration, Katy TX",
+  "dependencies": {
+    "@netlify/database": "^1.0.0",
+    "drizzle-orm": "beta"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^4.0.0",
+    "drizzle-kit": "beta"
+  }
+}

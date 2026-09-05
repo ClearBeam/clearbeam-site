@@ -1,0 +1,5 @@
+node_modules
+
+# Netlify CLI local state and build artifacts
+.netlify/*
+!.netlify/results.md

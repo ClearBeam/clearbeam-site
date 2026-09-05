@@ -379,6 +379,26 @@ form.quote-form .sub{font-size:12.5px;color:var(--chrome);margin-bottom:20px;}
   background:rgba(193,68,14,0.12);border:1px solid rgba(193,68,14,0.4);
   color:var(--paper);font-size:13px;line-height:1.5;
 }
+.form-ok{
+  display:none;margin-top:14px;padding:12px 14px;border-radius:4px;
+  background:rgba(127,174,111,0.14);border:1px solid rgba(127,174,111,0.45);
+  color:var(--paper);font-size:13px;line-height:1.5;
+}
+.form-ok strong{color:var(--amber);}
+
+/* Appointment picker */
+[hidden]{display:none !important;}
+.field label .opt{
+  color:#6a7178;text-transform:none;letter-spacing:0;font-size:10.5px;
+  border:1px solid rgba(154,165,172,0.3);border-radius:3px;padding:1px 5px;margin-left:6px;
+}
+.sched .row2{gap:10px;}
+.sched select:disabled{color:#6a7178;background:rgba(27,29,31,0.6);cursor:not-allowed;}
+.sched-note{
+  font-size:11.5px;color:#6a7178;margin-top:7px;line-height:1.5;
+  font-family:'IBM Plex Mono',monospace;
+}
+.sched-note.warn{color:var(--amber);}
 
 /* ===== Footer ===== */
 footer{background:#141516;color:var(--chrome);padding:44px 0 26px;}
