@@ -1,5 +1,5 @@
 import type { Config } from "@netlify/functions";
-import { and, gte, lte } from "drizzle-orm";
+import { and, gte, lte, ne } from "drizzle-orm";
 import { db } from "../../db/index.js";
 import { appointments } from "../../db/schema.js";
 import { bookingWindow, buildAvailability, localNow, TIMEZONE } from "../../lib/schedule.js";
@@ -12,7 +12,13 @@ export default async () => {
   const taken = await db
     .select({ slotDate: appointments.slotDate, slotHour: appointments.slotHour })
     .from(appointments)
-    .where(and(gte(appointments.slotDate, first), lte(appointments.slotDate, last)));
+    .where(
+      and(
+        gte(appointments.slotDate, first),
+        lte(appointments.slotDate, last),
+        ne(appointments.status, "cancelled"),
+      ),
+    );
 
   return Response.json(
     { timezone: TIMEZONE, days: buildAvailability(taken, now) },
