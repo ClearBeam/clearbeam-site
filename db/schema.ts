@@ -37,3 +37,14 @@ export const appointments = pgTable(
       .where(sql`${table.status} <> 'cancelled'`),
   ],
 );
+
+/**
+ * Expo push tokens for the owner's device(s). One owner today, but a table
+ * (rather than an env var) copes with reinstalls and a second device, and lets a
+ * token that Expo reports as unregistered be pruned.
+ */
+export const pushTokens = pgTable("push_tokens", {
+  id: serial().primaryKey(),
+  token: text().notNull().unique(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
