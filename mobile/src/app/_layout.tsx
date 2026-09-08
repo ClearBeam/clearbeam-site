@@ -6,8 +6,10 @@ import { StatusBar } from "expo-status-bar";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { AuthProvider, useAuth } from "@/auth/auth-context";
+import { configureNotificationHandler } from "@/lib/push";
 
 void SplashScreen.preventAutoHideAsync();
+configureNotificationHandler();
 
 function StackWithSplash() {
   const { status } = useAuth();

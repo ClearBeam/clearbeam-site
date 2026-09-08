@@ -9,6 +9,7 @@ import {
   isBookableSlot,
   localNow,
 } from "../../lib/schedule.js";
+import { notifyOwner } from "../../lib/push.js";
 
 const MAX_LENGTHS = { name: 120, phone: 40, zip: 12, service: 120, notes: 2000 };
 
@@ -102,6 +103,14 @@ export default async (req: Request) => {
       { status: 409 },
     );
   }
+
+  // Tell the owner's app. notifyOwner never throws; await it so the push request
+  // isn't cut off when the function returns, but a failure can't block the booking.
+  await notifyOwner({
+    title: "New booking",
+    body: `${name} · ${describeSlot(date, hour)}`,
+    data: { type: "new_booking", appointmentId: booked.id },
+  });
 
   return Response.json({ id: booked.id, appointment: describeSlot(date, hour) }, { status: 201 });
 };
