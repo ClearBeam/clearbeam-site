@@ -6,7 +6,9 @@
   "description": "ClearBeam AutoCare — mobile mechanic & headlight restoration, Katy TX",
   "dependencies": {
     "@netlify/database": "^1.0.0",
-    "drizzle-orm": "beta"
+    "bcryptjs": "^3.0.3",
+    "drizzle-orm": "beta",
+    "jose": "^6.2.12"
   },
   "devDependencies": {
     "@netlify/functions": "^4.0.0",
