@@ -1,5 +1,5 @@
 import type { Config } from "@netlify/functions";
-import { and, gte, lte } from "drizzle-orm";
+import { and, gte, lte, ne, sql } from "drizzle-orm";
 import { db } from "../../db/index.js";
 import { appointments } from "../../db/schema.js";
 import {
@@ -23,7 +23,13 @@ async function currentAvailability() {
   const taken = await db
     .select({ slotDate: appointments.slotDate, slotHour: appointments.slotHour })
     .from(appointments)
-    .where(and(gte(appointments.slotDate, first), lte(appointments.slotDate, last)));
+    .where(
+      and(
+        gte(appointments.slotDate, first),
+        lte(appointments.slotDate, last),
+        ne(appointments.status, "cancelled"),
+      ),
+    );
 
   return buildAvailability(taken, now);
 }
@@ -77,7 +83,13 @@ export default async (req: Request) => {
       service: text(body.service, MAX_LENGTHS.service) || null,
       notes: text(body.notes, MAX_LENGTHS.notes) || null,
     })
-    .onConflictDoNothing({ target: [appointments.slotDate, appointments.slotHour] })
+    .onConflictDoNothing({
+      target: [appointments.slotDate, appointments.slotHour],
+      // Match the partial unique index: only a live (non-cancelled) row at this
+      // slot is a real conflict. A previously cancelled row does not block the
+      // insert, so a freed slot can be rebooked.
+      where: sql`${appointments.status} <> 'cancelled'`,
+    })
     .returning({ id: appointments.id });
 
   if (!booked) {

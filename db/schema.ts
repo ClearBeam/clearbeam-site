@@ -1,4 +1,5 @@
-import { pgTable, serial, text, integer, timestamp, unique } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, integer, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 
 /**
  * A booked appointment slot.
@@ -19,7 +20,20 @@ export const appointments = pgTable(
     zip: text().notNull(),
     service: text(),
     notes: text(),
+    /**
+     * Lifecycle of the booking. New rows are always "confirmed"; the owner app
+     * moves a row to "completed" once the job is done or "cancelled" to free the
+     * slot. Cancelled rows are kept for history rather than deleted.
+     */
+    status: text("status").notNull().default("confirmed"),
     createdAt: timestamp("created_at").defaultNow(),
   },
-  (table) => [unique("appointments_slot_unique").on(table.slotDate, table.slotHour)],
+  (table) => [
+    // One live booking per slot. Cancelled rows are excluded from the constraint
+    // so a freed slot can be booked again (and so cancel/rebook history for the
+    // same slot can accumulate as multiple rows).
+    uniqueIndex("appointments_slot_unique")
+      .on(table.slotDate, table.slotHour)
+      .where(sql`${table.status} <> 'cancelled'`),
+  ],
 );

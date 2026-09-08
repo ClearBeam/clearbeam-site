@@ -163,12 +163,21 @@ export type AvailableDay = {
 /**
  * Every open slot in the booking window that is not already taken, grouped by
  * day. Days with nothing left are omitted so the picker only offers real choices.
+ *
+ * A slot only counts as taken while its booking is live. Cancelled rows are
+ * ignored here so a freed slot becomes bookable again — callers may either
+ * filter `status = 'cancelled'` out in their query or pass the rows through and
+ * let this function drop them.
  */
 export function buildAvailability(
-  takenSlots: { slotDate: string; slotHour: number }[],
+  takenSlots: { slotDate: string; slotHour: number; status?: string }[],
   now: LocalNow = localNow(),
 ): AvailableDay[] {
-  const taken = new Set(takenSlots.map((slot) => `${slot.slotDate}T${slot.slotHour}`));
+  const taken = new Set(
+    takenSlots
+      .filter((slot) => slot.status !== "cancelled")
+      .map((slot) => `${slot.slotDate}T${slot.slotHour}`),
+  );
   const days: AvailableDay[] = [];
 
   for (let offset = 0; offset < BOOKING_WINDOW_DAYS; offset++) {
