@@ -228,3 +228,13 @@
 
   if(scheduler) loadAvailability();
 })();
+
+// Google Ads "Phone call lead" conversion: fire when a visitor taps a call link.
+// (The site has no separate thank-you page, so the tap itself is the conversion.)
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href^="tel:"]');
+  if (!link) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {'send_to': 'AW-18393633759/Zt9mCPjTiP4cEN-n4sJE'});
+  }
+});
