@@ -156,6 +156,12 @@ a:focus-visible, button:focus-visible, input:focus-visible{
 .slider-label-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;}
 .slider-label-row .t{font-family:'Oswald',sans-serif;color:var(--paper);text-transform:uppercase;font-size:13px;letter-spacing:0.05em;}
 .slider-label-row .t2{font-family:'IBM Plex Mono',monospace;color:var(--chrome);font-size:11px;}
+
+/* ---- Hero mechanic visual (replaces headlight slider) ---- */
+.hero-photo{margin:0;border-radius:8px;overflow:hidden;}
+.hero-photo img{width:100%;display:block;}
+.hero-jobs{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.hero-jobs span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--amber);border:1px solid rgba(255,177,48,0.35);border-radius:999px;padding:5px 11px;white-space:nowrap;}
 .beam-wrap{
   position:relative;border-radius:6px;overflow:hidden;
   aspect-ratio: 4/3;
