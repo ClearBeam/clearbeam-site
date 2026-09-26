@@ -238,3 +238,19 @@ document.addEventListener('click', (e) => {
     gtag('event', 'conversion', {'send_to': 'AW-18393633759/Zt9mCPjTiP4cEN-n4sJE'});
   }
 });
+
+// Floating WhatsApp button (injected on every page)
+(function(){
+  if(document.querySelector('.wa-float')) return;
+  var a = document.createElement('a');
+  a.className = 'wa-float';
+  a.href = 'https://wa.me/12064033356?text=Hi%20technician%2C%20I%20need%20help%20with%20my%20car';
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.setAttribute('aria-label', 'Chat with us on WhatsApp');
+  a.innerHTML = '<svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">'
+    + '<path fill="#ffffff" d="M16 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.5.7 4.8 2 6.7L3.5 29l6.5-1.9c1.8 1 3.8 1.6 6 1.6 6.9 0 12.5-5.6 12.5-12.5S22.9 3.5 16 3.5z"/>'
+    + '<g transform="translate(8,8) scale(0.6667)"><path fill="#25D366" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></g>'
+    + '</svg>';
+  document.body.appendChild(a);
+})();
