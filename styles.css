@@ -438,3 +438,16 @@ footer{background:#121A21;color:var(--chrome);padding:44px 0 26px;}
 }
 
 ::selection{background:var(--amber);color:var(--asphalt);}
+
+/* ===== Floating WhatsApp button ===== */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:9999;
+  width:60px;height:60px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.30);
+  transition:transform .2s ease;
+}
+.wa-float:hover{transform:scale(1.08);}
+@media (max-width:640px){
+  .wa-float{right:16px;bottom:16px;width:56px;height:56px;}
+}
