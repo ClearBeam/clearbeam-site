@@ -13,6 +13,7 @@ export type Appointment = {
   name: string;
   phone: string;
   zip: string;
+  address: string | null; // street address where the car is, when collected
   service: string | null;
   notes: string | null;
   createdAt: string | null; // ISO 8601

@@ -11,7 +11,7 @@ import {
 } from "../../lib/schedule.js";
 import { notifyOwner } from "../../lib/push.js";
 
-const MAX_LENGTHS = { name: 120, phone: 40, zip: 12, service: 120, notes: 2000 };
+const MAX_LENGTHS = { name: 120, phone: 40, zip: 12, address: 300, service: 120, notes: 2000 };
 
 function text(value: unknown, max: number): string {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
@@ -54,6 +54,9 @@ export default async (req: Request) => {
   const name = text(body.name, MAX_LENGTHS.name);
   const phone = text(body.phone, MAX_LENGTHS.phone);
   const zip = text(body.zip, MAX_LENGTHS.zip);
+  // Optional at the API level: the website form requires an address, but the
+  // customer app posts to this same endpoint and doesn't collect one yet.
+  const address = text(body.address, MAX_LENGTHS.address);
 
   if (!name || !phone || !zip) {
     return Response.json(
@@ -81,6 +84,7 @@ export default async (req: Request) => {
       name,
       phone,
       zip,
+      address: address || null,
       service: text(body.service, MAX_LENGTHS.service) || null,
       notes: text(body.notes, MAX_LENGTHS.notes) || null,
     })
@@ -108,7 +112,9 @@ export default async (req: Request) => {
   // isn't cut off when the function returns, but a failure can't block the booking.
   await notifyOwner({
     title: "New booking",
-    body: `${name} · ${describeSlot(date, hour)}`,
+    body: address
+      ? `${name} · ${describeSlot(date, hour)} · ${address}`
+      : `${name} · ${describeSlot(date, hour)}`,
     data: { type: "new_booking", appointmentId: booked.id },
   });
 

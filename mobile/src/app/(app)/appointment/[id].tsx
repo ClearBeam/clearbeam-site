@@ -81,6 +81,11 @@ export default function AppointmentDetailScreen() {
             <Detail label="Service" value={appointment.service ?? "Not specified"} colors={colors} />
             <Detail label="ZIP" value={appointment.zip} colors={colors} />
             <Detail
+              label="Address"
+              value={appointment.address?.trim() ? appointment.address : "Not provided"}
+              colors={colors}
+            />
+            <Detail
               label="Notes"
               value={appointment.notes?.trim() ? appointment.notes : "None"}
               colors={colors}
