@@ -33,6 +33,8 @@ export type AppointmentDTO = {
   name: string;
   phone: string;
   zip: string;
+  /** Street address where the car is, or null for bookings that didn't collect one. */
+  address: string | null;
   service: string | null;
   notes: string | null;
   /** ISO 8601, or null for the handful of rows created before the column had a default. */
@@ -56,6 +58,7 @@ export function toAppointmentDTO(row: AppointmentRow): AppointmentDTO {
     name: row.name,
     phone: row.phone,
     zip: row.zip,
+    address: row.address ?? null,
     service: row.service ?? null,
     notes: row.notes ?? null,
     createdAt: row.createdAt ? row.createdAt.toISOString() : null,

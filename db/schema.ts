@@ -18,6 +18,13 @@ export const appointments = pgTable(
     name: text().notNull(),
     phone: text().notNull(),
     zip: text().notNull(),
+    /**
+     * Street address where the car is. The website quote form requires it so
+     * the owner no longer has to chase the customer for it after booking, but
+     * the column stays nullable: /api/book-slot accepts bookings without one
+     * because the customer app shares the endpoint and doesn't collect it yet.
+     */
+    address: text(),
     service: text(),
     notes: text(),
     /**

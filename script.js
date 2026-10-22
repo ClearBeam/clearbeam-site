@@ -124,6 +124,7 @@
         name: payload.name,
         phone: payload.phone,
         zip: payload.zip,
+        address: payload.address,
         service: payload.service,
         notes: payload.notes
       })
