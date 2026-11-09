@@ -65,5 +65,5 @@ export function getService(slug: string): Service | undefined {
 
 export const SERVICE_AREA = ["Katy", "Richmond", "West Houston", "Energy Corridor"];
 
-export const BUSINESS_PHONE = "(206) 403-3356";
-export const BUSINESS_PHONE_TEL = "tel:+12064033356";
+export const BUSINESS_PHONE = "(346) 297-0076";
+export const BUSINESS_PHONE_TEL = "tel:+13462970076";
