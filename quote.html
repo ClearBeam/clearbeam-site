@@ -110,6 +110,11 @@
           </div>
 
           <div class="field">
+            <label for="qemail">Email <span class="opt">optional</span></label>
+            <input id="qemail" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+          </div>
+
+          <div class="field">
             <label for="qservice">What do you need?</label>
             <select id="qservice" name="service">
               <option>Headlight restoration</option>
@@ -141,7 +146,7 @@
           </div>
 
           <button type="submit" class="btn btn-primary form-submit">Send Request →</button>
-          <div class="form-note">By submitting, you agree to be contacted by text or phone about your request.</div>
+          <div class="form-note">By submitting, you agree to be contacted by text, phone, or email about your request.</div>
           <div class="form-ok" id="formOk" style="display:none;"></div>
           <div class="form-error" id="formError" style="display:none;">Something went wrong — please call or text us instead at <a href="tel:+13462970076" style="color:var(--amber);">(346) 297-0076</a>.</div>
         </form>
